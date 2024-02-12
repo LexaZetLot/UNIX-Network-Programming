@@ -24,7 +24,8 @@
 #include <sys/wait.h>
 #include <sys/un.h>                             /* для доменных сокетов Unix */
 
-#include "error_function.h"                     /* для err_quit */
+#include "error.h"
+#include "wrapsock.h"
 
 #ifdef HAVE_SYS_SELECT_H   
 #include <sys/select.h>                         /* для удобства */
