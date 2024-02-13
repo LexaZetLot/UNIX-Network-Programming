@@ -23,9 +23,13 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/un.h>                             /* для доменных сокетов Unix */
+#include <sys/ioctl.h>
+#include <sys/mman.h>
+#include <linux/sysctl.h>
 
 #include "error.h"
 #include "wrapsock.h"
+#include "warpunix.h"
 
 #ifdef HAVE_SYS_SELECT_H   
 #include <sys/select.h>                         /* для удобства */

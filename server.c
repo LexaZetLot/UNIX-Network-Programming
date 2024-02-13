@@ -23,7 +23,7 @@ int main (int argc, char **argv)
 
         ticks = time(NULL);
         snprintf(buff, sizeof(buff), "%.25s\r\n", ctime(&ticks));
-        Write(connfd, buff strlen(buff));
+        Write(connfd, buff, strlen(buff));
         Close(connfd);
     }
 }
