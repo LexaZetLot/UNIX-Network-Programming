@@ -1,6 +1,4 @@
-#include <errno.h>
-#include <pthread.h>
-#include "unp.h"
+#include "../heders/unp.h"
 
 void Pthread_mutex_lock(pthread_mutex_t *mptr)
 {

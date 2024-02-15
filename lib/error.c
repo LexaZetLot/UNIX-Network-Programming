@@ -1,5 +1,5 @@
-#include "error.h"
-#include "unp.h"
+#include "../heders/error.h"
+#include "../heders/unp.h"
 
 int daemon_proc;                                            /* устанавливается в ненулевое значение с помощью daemon_init() */
 

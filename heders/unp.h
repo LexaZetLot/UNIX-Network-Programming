@@ -25,21 +25,20 @@
 #include <sys/un.h>                             /* для доменных сокетов Unix */
 #include <sys/ioctl.h>
 #include <sys/mman.h>
-#include <linux/sysctl.h>
+#include <sys/select.h>                         /* для удобства */
+#include <errno.h>
+#include <pthread.h>
+#include <stdbool.h>
 
 #include "error.h"
 #include "wrapsock.h"
 #include "warpunix.h"
+#include "sock_ntops.h"
+#include "readn.h"
+#include "writen.h"
+#include "readline.h"
 
-#ifdef HAVE_SYS_SELECT_H   
-#include <sys/select.h>                         /* для удобства */
-#endif 
-
-#ifdef HAVE_SYS_SYSCTL_H
-#include <sys/sysctl.h>
-#endif
-
-#ifdef HAVE_POLL_H
+#ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
 #endif
 
@@ -93,13 +92,10 @@
 #define SHUT_RDWR 2                             /* отключение чтения и записи */
 #endif
 
-#ifndef INET_ADDRSTRLEN
-#define INET_ADDRSTRLEN 16                      /* "ddd.ddd.ddd.ddd.\e0" */
-#endif
 
-#ifndef INET6_ADDRSTRLEN
+#define INET_ADDRSTRLEN 16                      /* "ddd.ddd.ddd.ddd.\e0" */
 #define INET6_ADDRSTRLEN 46                     /* xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx или xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:ddd.ddd.ddd.ddd\e0 */
-#endif
+
 
 #ifndef HAVE_BZERO
 #define bzero(ptr, n) memset(ptr, 0, n)
