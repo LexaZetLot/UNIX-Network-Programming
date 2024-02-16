@@ -37,6 +37,7 @@
 #include "readn.h"
 #include "writen.h"
 #include "readline.h"
+#include "wraplib.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
