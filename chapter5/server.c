@@ -21,7 +21,6 @@ int main(int argc, char **argv)
     {
         clilen = sizeof(cliaddr);
         connfd = Accept(listenfd, (SA *) &cliaddr, &clilen);
-
         if((childpid = Fork()) == 0)                    /* дочерний процесс */
         {
             Close(listenfd);                            /* закрываем прослушиваемый сокет */
