@@ -8,8 +8,6 @@ static size_t my_read(int fd, char *ptr)
 {
     if(read_cnt <= 0)
     {
-        /*while (true)
-        {*/
         again:
             if((read_cnt = read(fd, read_buf, sizeof(read_buf))) < 0)
             {
@@ -20,10 +18,9 @@ static size_t my_read(int fd, char *ptr)
             else if (read_cnt == 0)
                 return 0;
             read_ptr = read_buf;
-        /*}*/
     }
     read_cnt--;
-    *ptr = *read_ptr;
+    *ptr = *read_ptr++;
     return 1;
 }
 
@@ -60,7 +57,6 @@ ssize_t readlinebuf(void **vptrptr)
 
 ssize_t Readline(int fd, void *ptr, size_t maxlen)
 {
-    printf("*****");
     ssize_t n;
 
     if((n = readline(fd, ptr, maxlen)) < 0)

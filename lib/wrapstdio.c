@@ -20,9 +20,9 @@ char *Fgets(char *ptr, int n, FILE *stream)
 {
     char *rptr;
 
-    if((rptr = fgets(ptr, n, stream)) == NULL /*&& ferror(stream)*/)
+    if((rptr = fgets(ptr, n, stream)) == NULL && ferror(stream))
         err_sys("fgets error");
-    //printf("%s", rptr);
+
     return rptr;
 }
 

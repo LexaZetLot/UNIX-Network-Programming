@@ -41,6 +41,8 @@
 #include "str_echo.h"
 #include "wrapstdio.h"
 #include "str_cli.h"
+#include "signal.h"
+#include "sigchldwaitpid.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
@@ -188,7 +190,9 @@ struct sockaddr_storage
 /* разрешения по умолчанию на доступ к файлам для новых каталогов */
 #define DIR_MODE (FILE_MODE | S_IXUSR | S_IXGRP | S_IXOTH)
 
+#ifndef SIGFUNC
 typedef void Sigfunc (int);                     /* для обработчиков сигнала */
+#endif
 
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
