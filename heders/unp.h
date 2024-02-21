@@ -43,6 +43,8 @@
 #include "str_cli.h"
 #include "signal.h"
 #include "sigchldwaitpid.h"
+#include "str_echo_sum.h"
+#include "str_cli_bit.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
@@ -191,6 +193,7 @@ struct sockaddr_storage
 #define DIR_MODE (FILE_MODE | S_IXUSR | S_IXGRP | S_IXOTH)
 
 #ifndef SIGFUNC
+#define SIGFUNC
 typedef void Sigfunc (int);                     /* для обработчиков сигнала */
 #endif
 
