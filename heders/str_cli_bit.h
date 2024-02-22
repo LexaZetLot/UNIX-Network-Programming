@@ -2,6 +2,6 @@
 #define STR_CLI_BIT_H
 #include <stdio.h>
 
-void str_sli_bit(FILE *fp, int sockfd);
+void str_cli_bit(FILE *fp, int sockfd);
 
 #endif

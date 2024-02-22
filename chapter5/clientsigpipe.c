@@ -1,4 +1,6 @@
-#include "../heders/unp.h"
+ #include "../heders/unp.h"
+
+void sig_pipe(int signo);
 
 int main(int argc, char **argv)
 {
@@ -15,9 +17,19 @@ int main(int argc, char **argv)
     servaddr.sin_port = htons(SERV_PORT);
     Inet_pton(AF_INET, argv[1], &servaddr.sin_addr);
 
+    Signal(SIGPIPE, sig_pipe);
     Connect(sockfd, (SA *) &servaddr, sizeof(servaddr));
 
-    str_cli(stdin, sockfd);             /* эта функция выполняет все необходимые действия со стороны клиента */
+    sleep(2);
+    Write(sockfd, "hello", 5);
+    sleep(2);
+    Write(sockfd, "world", 5);
 
     exit(0);
+}
+
+void sig_pipe(int signo)
+{
+    printf("SIGPIPE\n");
+    return;
 }

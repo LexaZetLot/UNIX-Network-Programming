@@ -32,15 +32,13 @@ int main(int argc, char **argv)
         if((childpid = Fork()) == 0)    /* дочерний процесс */
         {
             Close(listenfd);            /* закрываем прослушиваемый сокет */
-            str_echo(connfd);           /* обрабатываем запрос */
+            str_echo_bit(connfd);       /* обрабатываем запрос */
             exit(0);
         }
     }
     Close(connfd);                      /* родиткль закрывет присоединенный сокет */
 }
 
-
 void sig_chld(int a)
 {
 }
-

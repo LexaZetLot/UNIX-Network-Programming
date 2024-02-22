@@ -44,6 +44,7 @@
 #include "signal.h"
 #include "sigchldwaitpid.h"
 #include "str_echo_sum.h"
+#include "str_echo_bit.h"
 #include "str_cli_bit.h"
 
 #ifdef CONFIG_POLL_H
