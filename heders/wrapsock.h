@@ -1,6 +1,7 @@
 #ifndef HERE_WRAOSOCK
 #define HERE_WRAOSOCK
 #include <sys/socket.h>
+#include <poll.h>
 
 int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 void Bind(int fd, const struct sockaddr *sa, socklen_t salen);
@@ -20,9 +21,7 @@ int Kqueue(void);
 int Kevent(int kq, const struct kevent *changelist, int nchanges, struct kevent *eventlist, int nevents, const struct timespec *timeout);
 #endif
 void Listen (int fd, int backlog);
-#ifdef HAVE_POLL
-int Poll(striuct pollfd *fdarray, unsigned long nfds, int timeout);
-#endif
+int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout);
 ssize_t Recv(int fd, void *ptr, size_t nbytes, int flag);
 ssize_t Recvfrom(int fd, void *ptr, size_t nbytes, int flags, struct sockaddr *sa, socklen_t *salenptr);
 ssize_t Recvmsg(int fd, struct msghdr *msg, int flags);

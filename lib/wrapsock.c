@@ -131,12 +131,12 @@ void Listen (int fd, int backlog)
         err_sys("listen error");
 }
 
-#ifdef HAVE_POLL
-int Poll(striuct pollfd *fdarray, unsigned long nfds, int timeout)
+#ifdef CONFIG_IRQ_POLL
+int Poll(struct pollfd *fdarray, unsigned long nfds, int timeout)
 {
     int n;
 
-    if ((n = poll(fdarry, nfds, timeout)) < 0)
+    if ((n = poll(fdarray, nfds, timeout)) < 0)
         err_sys("poll error");
 
     return n;

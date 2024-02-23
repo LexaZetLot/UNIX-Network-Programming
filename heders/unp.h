@@ -29,6 +29,7 @@
 #include <errno.h>
 #include <pthread.h>
 #include <stdbool.h>
+#include <poll.h>
 
 #include "error.h"
 #include "wrapsock.h"
@@ -46,6 +47,7 @@
 #include "str_echo_sum.h"
 #include "str_echo_bit.h"
 #include "str_cli_bit.h"
+#include "str_cli_select.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
