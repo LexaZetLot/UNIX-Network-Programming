@@ -30,6 +30,7 @@
 #include <pthread.h>
 #include <stdbool.h>
 #include <poll.h>
+#include <sys/resource.h>
 
 #include "error.h"
 #include "wrapsock.h"

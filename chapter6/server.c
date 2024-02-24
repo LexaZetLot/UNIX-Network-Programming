@@ -1,4 +1,5 @@
 #include "../heders/unp.h"
+#include <sys/resource.h>
 
 int main(int argc, char **argv)
 {
@@ -9,6 +10,10 @@ int main(int argc, char **argv)
     char buf[MAXLINE];
     socklen_t clilen;
     struct sockaddr_in cliaddr, servaddr;
+    struct rlimit new;
+
+    //getrlimit(RLIMIT_NOFILE, &new);
+    //setrlimit(RLIMIT_NOFILE, &new);
 
     listenfd = Socket(AF_INET, SOCK_STREAM, 0);
 

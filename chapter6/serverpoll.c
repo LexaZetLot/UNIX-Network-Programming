@@ -1,8 +1,5 @@
 #include "../heders/unp.h"
-#include <asm-generic/errno.h>
-#include <cstdio>
 #include <limits.h>                                         /* для OPEN_MAX */
-#include <netinet/in.h>
 
 int main(int argc, char **argv)
 {
