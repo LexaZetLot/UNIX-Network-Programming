@@ -1,1 +1,2 @@
-gcc server01.c ../lib/str_cli.c ../lib/wrapstdio.c ../lib/error.c ../lib/wrapunix.c ../lib/wrapsock.c ../lib/writen.c ../lib/readline.c ../lib/wraplib.c ../lib/str_echo.c ../lib/signal.c -o server01out
+gcc udpserver.c ../lib/dg_echo.c ../lib/str_cli.c ../lib/wrapstdio.c ../lib/error.c ../lib/wrapunix.c ../lib/wrapsock.c ../lib/writen.c ../lib/readline.c ../lib/wraplib.c ../lib/str_echo.c ../lib/signal.c -o udpserverout
+

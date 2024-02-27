@@ -49,6 +49,8 @@
 #include "str_echo_bit.h"
 #include "str_cli_bit.h"
 #include "str_cli_select.h"
+#include "dg_echo.h"
+#include "dg_cli.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
