@@ -51,6 +51,10 @@
 #include "str_cli_select.h"
 #include "dg_echo.h"
 #include "dg_cli.h"
+#include "dg_cliaddr.h"
+#include "dg_cliconnect.h"
+#include "dg_cliloop.h"
+#include "dg_echoloop.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */

@@ -7,7 +7,8 @@ int Accept(int fd, struct sockaddr *sa, socklen_t *salenptr);
 void Bind(int fd, const struct sockaddr *sa, socklen_t salen);
 void Connect(int fd, const struct sockaddr *sa, socklen_t salen);
 void Getpeermane(int fd, struct sockaddr *sa, socklen_t *salenptr);
-void Getsockname(int fd, int level, int optname, void *optval, socklen_t *optlenptr);
+void Getsockname(int fd, struct sockaddr *sa, socklen_t *salenptr);
+void Getsockopt(int fd, int level, int optname, void *optval, socklen_t *optlenptr);
 #ifdef CONFIG_INET6_RTH_INIT
 int Inet6_rth_space(int type, int segments);
 void * Inet6_rth_init(void *rthbuf, socklen_t rthlen, int type, int segments);

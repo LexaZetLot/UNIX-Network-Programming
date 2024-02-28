@@ -1,2 +1,2 @@
-gcc udpserver.c ../lib/dg_echo.c ../lib/str_cli.c ../lib/wrapstdio.c ../lib/error.c ../lib/wrapunix.c ../lib/wrapsock.c ../lib/writen.c ../lib/readline.c ../lib/wraplib.c ../lib/str_echo.c ../lib/signal.c -o udpserverout
+gcc udpclient01.c ../lib/dg_echo.c ../lib/str_cli.c ../lib/wrapstdio.c ../lib/error.c ../lib/wrapunix.c ../lib/wrapsock.c ../lib/writen.c ../lib/readline.c ../lib/wraplib.c ../lib/str_echo.c ../lib/signal.c ../lib/dg_echoloop.c ../lib/dg_cliloop.c ../lib/sock_ntops.c -o udpclient01out
 
