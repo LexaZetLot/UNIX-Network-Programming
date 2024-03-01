@@ -11,7 +11,6 @@
 #include <time.h>                               /* структура timespec{} для функции pselect() */
 #include <netinet/in.h>                         /* структура sockaddr_in{} и дргие сетвые оперделения */
 #include <arpa/inet.h>                          /* inet(3) функции */
-#include <errno.h>
 #include <fcntl.h>                              /* для неблокируемых сокетов */
 #include <netdb.h>
 #include <signal.h>
