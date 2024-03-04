@@ -30,6 +30,8 @@
 #include <stdbool.h>
 #include <poll.h>
 #include <sys/resource.h>
+//#include <netinet/sctp.h>
+#include <usrsctp.h>
 
 #include "error.h"
 #include "wrapsock.h"
@@ -54,6 +56,11 @@
 #include "dg_cliconnect.h"
 #include "dg_cliloop.h"
 #include "dg_echoloop.h"
+#include "sctp_getnostrm.h"
+#include "sctp_address_to_associd.h"
+#include "sctp_wrapper.h"
+#include "sctpstr_cli.h"
+#include "sctp_strcliecho.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
@@ -85,10 +92,6 @@
 
 #ifdef HAVE_NET_IF_DL_H
 #include <net/if_dl.h>
-#endif
-
-#ifdef HAVE_NETINET_SCTP_H
-#include <netinet/sctp.h>
 #endif
 
 /* OSF/1 фактически запрещыет recv() и send() в <sys/soket.h> */
@@ -169,6 +172,7 @@ struct in_pktinfo
 #define SERV_PORT_STR "9877"                    /* клиенты и сервера TCP и UDP */
 #define UNIXSTR_PATH "/tmp/unix.str"            /* потоковые клиенты и серверы домена Unix */
 #define UNIXDG_PATH "/tmp/unix.dg"              /* клиенты и серверы протокола дейтаграмм домена Unix */
+#define SERV_MAX_SCTP_STRM 10
 
 /* Дальнейшие определения сокращают преобразования типов аргументов-указателей */
 #define SA struct sockaddr
