@@ -1,6 +1,6 @@
 #include "../heders/unp.h"
-#include <usrsctp.h>
 
+//#ifdef GO_SCTP_ADDRESS_TO_ASSOCID_C
 sctp_assoc_t sctp_address_to_associd(int sock_fd, struct sockaddr *sa, socklen_t salen)
 {
     struct sctp_paddrparams sp;
@@ -14,3 +14,4 @@ sctp_assoc_t sctp_address_to_associd(int sock_fd, struct sockaddr *sa, socklen_t
 
     return(sp.spp_assoc_id);
 }
+//#endif

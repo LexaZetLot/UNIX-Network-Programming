@@ -31,7 +31,6 @@
 #include <poll.h>
 #include <sys/resource.h>
 //#include <netinet/sctp.h>
-#include <usrsctp.h>
 
 #include "error.h"
 #include "wrapsock.h"
@@ -61,6 +60,7 @@
 #include "sctp_wrapper.h"
 #include "sctpstr_cli.h"
 #include "sctp_strcliecho.h"
+#include "../sctp/sctp.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
@@ -121,6 +121,35 @@
 #define bzero(ptr, n) memset(ptr, 0, n)
 #endif
 
+#ifndef SOL_SCTP
+#define SOL_SCTP 132
+#endif
+
+#ifndef SCTP_GET_PEER_ADDRS
+#define SCTP_GET_PEER_ADDRS 108
+#endif
+
+#ifndef SCTP_SOCKOPT_BINDX_ADD
+#define SCTP_SOCKOPT_BINDX_ADD  100
+#endif
+
+
+#ifndef SCTP_SOCKOPT_BINDX_REM
+#define SCTP_SOCKOPT_BINDX_REM  101
+#endif
+
+#ifndef SCTP_SOCKOPT_CONNECTX_OLD
+#define SCTP_SOCKOPT_CONNECTX_OLD 107
+#endif
+
+#ifndef SCTP_SOCKOPT_CONNECTX
+#define SCTP_SOCKOPT_CONNECTX   110
+#endif
+
+#ifndef SCTP_SOCKOPT_CONNECTX3
+#define SCTP_SOCKOPT_CONNECTX3  111
+#endif
+
 #ifndef HAVE_GETHOSTBYNAME2
 #define gethostbyname2(host, family) gethostbyname((host))
 #endif
@@ -173,6 +202,8 @@ struct in_pktinfo
 #define UNIXSTR_PATH "/tmp/unix.str"            /* потоковые клиенты и серверы домена Unix */
 #define UNIXDG_PATH "/tmp/unix.dg"              /* клиенты и серверы протокола дейтаграмм домена Unix */
 #define SERV_MAX_SCTP_STRM 10
+#define SERV_MORE_STRMS_SCTP 20
+#define MSG_ABORT 3
 
 /* Дальнейшие определения сокращают преобразования типов аргументов-указателей */
 #define SA struct sockaddr

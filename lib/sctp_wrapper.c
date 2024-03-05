@@ -1,8 +1,8 @@
 #include "../heders/unp.h"
 
-int Sctp_recvmsg(int s, void *msg, size_t len, struct sockaddr *from, socklen_t *fromlen, struct sctp_sndrcvinfo *sinfo, int *msg_flags)
+ssize_t Sctp_recvmsg(int s, void *msg, size_t len, struct sockaddr *from, socklen_t *fromlen, struct sctp_sndrcvinfo *sinfo, int *msg_flags)
 {
-   int ret;
+   ssize_t ret;
    ret = sctp_recvmsg(s, msg, len, from, fromlen, sinfo, msg_flags);
    if(ret < 0)
        err_sys("sctp_recvmsg error");
