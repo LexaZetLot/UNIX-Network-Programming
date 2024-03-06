@@ -30,7 +30,6 @@
 #include <stdbool.h>
 #include <poll.h>
 #include <sys/resource.h>
-//#include <netinet/sctp.h>
 
 #include "error.h"
 #include "wrapsock.h"

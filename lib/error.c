@@ -9,7 +9,7 @@ int daemon_proc;                                            /* устанавл�
 /**************************************************************/
 static void err_doit (int errnoflag, int level, const char *fmt, va_list ap);
 
-void ree_ret(const char *fmt, ...)
+void err_ret(const char *fmt, ...)
 {
     va_list ap;
     
