@@ -31,7 +31,7 @@ void Connect(int fd, const struct sockaddr *sa, socklen_t salen)
         err_sys("connect error");
 }
 
-void Getpeermane(int fd, struct sockaddr *sa, socklen_t *salenptr)
+void Getpeername(int fd, struct sockaddr *sa, socklen_t *salenptr)
 {
     if (getpeername(fd, sa, salenptr) < 0)
         err_sys("getpeername error");

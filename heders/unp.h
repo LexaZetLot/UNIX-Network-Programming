@@ -60,6 +60,10 @@
 #include "sctpstr_cli.h"
 #include "sctp_strcliecho.h"
 #include "../sctp/sctp.h"
+#include "host_serv.h"
+#include "tcp_connect.h"
+#include "sock_ntop_host.h"
+#include "tcp_listen.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
