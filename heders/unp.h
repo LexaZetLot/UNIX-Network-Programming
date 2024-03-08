@@ -64,6 +64,7 @@
 #include "tcp_connect.h"
 #include "sock_ntop_host.h"
 #include "tcp_listen.h"
+#include "udp_server.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
