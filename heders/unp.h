@@ -65,6 +65,9 @@
 #include "sock_ntop_host.h"
 #include "tcp_listen.h"
 #include "udp_server.h"
+#include "sock_set_addr.h"
+#include "sock_set_port.h"
+#include "getnameinfo_timeo.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
