@@ -68,6 +68,8 @@
 #include "sock_set_addr.h"
 #include "sock_set_port.h"
 #include "getnameinfo_timeo.h"
+#include "daemon_init.h"
+#include "daemon_inetd.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
