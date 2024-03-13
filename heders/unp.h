@@ -70,6 +70,12 @@
 #include "getnameinfo_timeo.h"
 #include "daemon_init.h"
 #include "daemon_inetd.h"
+#include "connect_timeo.h"
+#include "dg_cli_alrm.h"
+#include "readable_timeo.h"
+#include "dg_cli_so_rcvtimeo.h"
+#include "dg_cli_readable_timeo.h"
+#include "str_echo_stdio.h"
 
 #ifdef CONFIG_POLL_H
 #include <poll.h>                               /* для удобства */
